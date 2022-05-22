@@ -1,11 +1,11 @@
-import pygame, sys, random
+import pygame, sys, random, os
 from pygame.locals import *
 from map_1 import map1
 
 pygame.init()
 screen = pygame.display.set_mode((1600, 900))
 pygame.display.set_caption('Stewart')
-pygame.key.set_repeat(90, 90)
+pygame.key.set_repeat(100, 100)
 grass = pygame.image.load("img/grass.jpg")
 water = pygame.image.load("img/water.jpg")
 mountian = pygame.image.load("img/mountian.jpg")
@@ -119,12 +119,20 @@ while True:
     for event in pygame.event.get():
         if event.type == KEYDOWN:
             if event.key == K_ESCAPE:
+                pygame.quit()
                 sys.exit()
+                os.exit()
+                quit()
+                exit()
             else:
                 player.update(event.key)
                                                 
         elif event.type == QUIT:
+            pygame.quit()
             sys.exit()
+            os.exit()
+            quit()
+            exit()
 
     for x in range (0,150):
         for y in range (0,150):
