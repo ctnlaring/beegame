@@ -6,11 +6,11 @@ pygame.init()
 screen = pygame.display.set_mode((1600, 900))
 pygame.display.set_caption('Stewart')
 pygame.key.set_repeat(100, 100)
-grass = pygame.image.load("img/grass.jpg")
-water = pygame.image.load("img/water.jpg")
-mountian = pygame.image.load("img/mountian.jpg")
+grass = pygame.image.load("img/grass.png")
+water = pygame.image.load("img/water.png")
+mountian = pygame.image.load("img/mountian.png")
 
-terrains = [{"sprite": grass, "passable": True}, {"sprite": water, "passable": False}, {"sprite": mountian, "passable": False}]
+terrains = [{"sprite": grass, "passable": True}, {"sprite": water, "passable": True}, {"sprite": mountian, "passable": False}]
 themap = [[-1 for y in range(150)] for x in range (150)]
 for x in range (0,150):
     for y in range (0,150):
@@ -33,7 +33,7 @@ class Bee(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super(Player, self).__init__()
-        self.image = pygame.image.load('img/Stewart.png')
+        self.image = pygame.image.load('img/bee.png')
         self.rect = self.image.get_rect(
             center=(96,96))
 
